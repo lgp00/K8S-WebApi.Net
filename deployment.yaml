@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rainydays
+  name: rainydays
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rainydays
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rainydays
+    spec:
+      containers:
+      - image: projectdimitri/rainydays:v1
+        name: rainydays
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
